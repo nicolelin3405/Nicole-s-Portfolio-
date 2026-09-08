@@ -1,16 +1,16 @@
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#f4efe6;
-  --paper:#fbfaf7;
-  --ink:#111315;
-  --navy:#19344d;
-  --blue:#3b6792;
-  --red:#b33b3b;
-  --red-dark:#8f2f32;
-  --gold:#b39a63;
-  --muted:#716f69;
-  --line:#d8d2c7;
-  --placeholder:#dfe4e4;
+  --bg:#171717;
+  --paper:#202020;
+  --ink:#f3f1ec;
+  --soft:#d2d0ca;
+  --muted:#969691;
+  --navy:#1c3042;
+  --blue:#6f9fc7;
+  --red:#c94a4a;
+  --red-dark:#9e373b;
+  --line:#353535;
+  --placeholder:#303233;
 }
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--ink);font-family:"DM Sans",Arial,sans-serif;font-size:16px;line-height:1.55}
@@ -18,21 +18,20 @@ a{color:inherit;text-decoration:none}
 .nav{
   height:82px;padding:0 5vw;display:flex;align-items:center;justify-content:space-between;
   border-bottom:1px solid var(--line);position:sticky;top:0;
-  background:rgba(244,239,230,.94);backdrop-filter:blur(10px);z-index:10
+  background:rgba(23,23,23,.94);backdrop-filter:blur(10px);z-index:10
 }
-.logo{font-weight:700;font-size:18px;letter-spacing:-.04em;color:var(--navy)}
+.logo{font-weight:700;font-size:18px;letter-spacing:-.04em;color:var(--ink)}
 .nav-links{display:flex;gap:34px;font-size:13px;text-transform:uppercase;letter-spacing:.08em}
 .nav-links a{color:var(--muted);transition:.2s}
-.nav-links a:hover,.nav-links .active{color:var(--red)}
+.nav-links a:hover,.nav-links .active{color:var(--blue)}
 .hero{min-height:calc(100vh - 82px);padding:12vh 8vw 10vh;display:flex;flex-direction:column;justify-content:center;max-width:1300px}
 .eyebrow{font-size:11px;letter-spacing:.15em;font-weight:700;color:var(--blue);text-transform:uppercase}
 .hero h1,.page-intro h1,.about-hero h1{font-size:clamp(80px,13vw,190px);line-height:.82;letter-spacing:-.07em;font-weight:500;margin:35px 0}
-h1 em,h2 em{font-family:"Playfair Display",Georgia,serif;font-weight:500}
-.hero h1 em{color:var(--red)}
-.hero-copy{max-width:590px;font-size:21px;line-height:1.45;color:#454641;margin-bottom:30px}
+.hero h1 em,.page-intro h1 em,.about-hero h1 em{color:var(--ink)}
+.hero-copy{max-width:590px;font-size:21px;line-height:1.45;color:var(--soft);margin-bottom:30px}
 .text-link{
   font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;
-  border-bottom:1px solid var(--gold);width:max-content;padding-bottom:5px
+  border-bottom:1px solid var(--red);width:max-content;padding-bottom:5px
 }
 .text-link span{margin-left:12px;color:var(--blue)}
 .section{padding:12vw 8vw}
@@ -43,13 +42,13 @@ h1 em,h2 em{font-family:"Playfair Display",Georgia,serif;font-weight:500}
 .featured-card{display:block}
 .placeholder{
   background:var(--placeholder);min-height:430px;display:flex;flex-direction:column;
-  align-items:center;justify-content:center;color:#6d7475;
+  align-items:center;justify-content:center;color:#8d9293;
   transition:transform .5s,background .3s
 }
 .placeholder span{font-size:11px;letter-spacing:.16em;font-weight:700}
 .placeholder small{margin-top:8px;font-size:12px}
 .featured-card:hover .placeholder,.project-card:hover .placeholder,.large-project:hover .placeholder{
-  transform:scale(.985);background:#d5dddd
+  transform:scale(.985);background:#373939
 }
 .hero-placeholder{min-height:65vh}
 .card-info{
@@ -60,36 +59,34 @@ h1 em,h2 em{font-family:"Playfair Display",Georgia,serif;font-weight:500}
 .card-info>p{color:var(--muted);font-size:13px}
 .project-number{font-size:11px;letter-spacing:.12em;color:var(--red);margin:17px 0 7px;font-weight:700}
 .project-card:nth-child(2) .project-number,.project-card:nth-child(4) .project-number{color:var(--blue)}
-.project-card:nth-child(5) .project-number{color:var(--gold)}
-.project-grid,.two-col{display:grid;grid-template-columns:1fr 1fr;gap:70px 24px}
 .project-card h3{font-size:23px;font-weight:500;letter-spacing:-.03em}
 .project-card>p:last-child{font-size:13px;color:var(--muted);margin-top:4px}
+.project-grid,.two-col{display:grid;grid-template-columns:1fr 1fr;gap:70px 24px}
 .statement{
-  background:var(--navy);color:var(--paper);min-height:70vh;
+  background:var(--navy);color:var(--ink);min-height:70vh;
   display:flex;flex-direction:column;justify-content:center
 }
-.statement .eyebrow{color:#9fb5c9}
+.statement .eyebrow{color:#9dbbd4}
 .statement h2{
   font-size:clamp(55px,8vw,115px);line-height:.95;letter-spacing:-.06em;
   font-weight:500;max-width:1050px;margin:45px 0
 }
-.statement h2 em{color:#d7bd82}
-.statement .text-link{border-color:#d7bd82}
-.statement .text-link span{color:#e8edf0}
+.statement h2 em{color:var(--blue)}
+.statement .text-link{border-color:var(--red)}
+.statement .text-link span{color:#c7d7e4}
 .contact{background:var(--paper)}
 .contact h2{
   font-size:clamp(65px,9vw,130px);line-height:.88;letter-spacing:-.07em;
   font-weight:500;margin:35px 0 55px
 }
-.contact h2 em{color:var(--red)}
-.email{font-size:18px;border-bottom:1px solid var(--red);padding-bottom:5px;color:var(--navy)}
+.contact h2 em{color:var(--blue)}
+.email{font-size:18px;border-bottom:1px solid var(--red);padding-bottom:5px;color:var(--ink)}
 footer{
   border-top:1px solid var(--line);padding:25px 8vw;display:flex;
   justify-content:space-between;color:var(--muted);font-size:12px;background:var(--paper)
 }
 .page-intro{padding:13vh 8vw 9vh;border-bottom:1px solid var(--line)}
 .page-intro h1{font-size:clamp(65px,10vw,145px);margin:30px 0}
-.page-intro h1 em{color:var(--red)}
 .page-intro>p:last-child{max-width:600px;font-size:19px;color:var(--muted)}
 .all-projects{padding:8vw}
 .large-project{display:block;margin-bottom:120px}
@@ -106,14 +103,13 @@ footer{
   gap:10vw;align-items:end
 }
 .about-hero h1{font-size:clamp(65px,8vw,120px);margin:30px 0 0}
-.about-hero h1 em{color:var(--blue)}
 .portrait{min-height:500px}
 .about-copy{
   margin:0 8vw;padding:75px 0;border-top:1px solid var(--line);
   display:grid;grid-template-columns:1fr 2.5fr;gap:8vw
 }
 .about-label{font-size:11px;letter-spacing:.14em;color:var(--red);font-weight:700}
-.about-copy p{max-width:760px;color:#55524c}
+.about-copy p{max-width:760px;color:var(--soft)}
 .about-copy .big-copy{
   font-size:32px;line-height:1.25;color:var(--ink);
   letter-spacing:-.03em;margin-bottom:28px
