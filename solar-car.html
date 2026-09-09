@@ -1,17 +1,1171 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MIT Solar Electric Vehicle Team — Nicole Lin</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../style.css"></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>MIT Solar Electric Vehicle Team — Nicole Lin</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* =====================================================
+       SOLAR CAR PROJECT PAGE
+       ===================================================== */
+
+    .solar-page {
+      overflow: hidden;
+    }
+
+    /* ---------------- HERO ---------------- */
+
+    .solar-hero {
+      position: relative;
+      min-height: 92vh;
+      display: flex;
+      align-items: flex-end;
+      padding: 8vw;
+      background: #111;
+    }
+
+    .solar-hero-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: .72;
+    }
+
+    .solar-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          180deg,
+          rgba(0,0,0,.08) 0%,
+          rgba(0,0,0,.28) 45%,
+          rgba(0,0,0,.90) 100%
+        );
+    }
+
+    .solar-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1050px;
+    }
+
+    .solar-hero .eyebrow {
+      color: var(--red);
+    }
+
+    .solar-hero h1 {
+      font-size: clamp(60px, 9vw, 145px);
+      line-height: .86;
+      letter-spacing: -.065em;
+      font-weight: 500;
+      margin: 28px 0;
+      max-width: 1050px;
+    }
+
+    .solar-hero h1 em {
+      font-family: "Playfair Display", Georgia, serif;
+      font-weight: 500;
+      color: #f3f1ec;
+    }
+
+    .solar-hero-subtitle {
+      max-width: 680px;
+      color: #ddd9d2;
+      font-size: 21px;
+      line-height: 1.45;
+      margin-bottom: 32px;
+    }
+
+    .solar-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 32px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: #aaa7a0;
+    }
+
+    .solar-meta strong {
+      color: #f3f1ec;
+      font-weight: 600;
+      margin-left: 5px;
+    }
+
+    /* ---------------- INTRO ---------------- */
+
+    .solar-intro {
+      padding: 10vw 8vw;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 8vw;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .solar-label {
+      color: var(--red);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .solar-intro h2 {
+      font-size: clamp(40px, 5vw, 72px);
+      line-height: 1;
+      letter-spacing: -.055em;
+      font-weight: 500;
+      margin-bottom: 30px;
+      max-width: 900px;
+    }
+
+    .solar-intro p {
+      max-width: 790px;
+      color: var(--soft);
+      font-size: 18px;
+      line-height: 1.65;
+    }
+
+    /* ---------------- TIMELINE ---------------- */
+
+    .solar-timeline-section {
+      padding: 9vw 8vw;
+    }
+
+    .solar-section-heading {
+      margin-bottom: 70px;
+    }
+
+    .solar-section-heading .eyebrow {
+      color: var(--red);
+    }
+
+    .solar-section-heading h2 {
+      font-size: clamp(55px, 7vw, 105px);
+      line-height: .9;
+      letter-spacing: -.065em;
+      font-weight: 500;
+      margin-top: 25px;
+    }
+
+    .solar-timeline {
+      border-top: 1px solid var(--line);
+    }
+
+    .solar-timeline-item {
+      display: grid;
+      grid-template-columns: 120px 1fr 2fr;
+      gap: 40px;
+      padding: 27px 0;
+      border-bottom: 1px solid var(--line);
+      align-items: start;
+    }
+
+    .solar-timeline-year {
+      font-size: 13px;
+      color: var(--red);
+      font-weight: 700;
+      letter-spacing: .08em;
+    }
+
+    .solar-timeline-role {
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+    .solar-timeline-desc {
+      color: var(--muted);
+      font-size: 15px;
+      max-width: 620px;
+    }
+
+    /* ---------------- LARGE IMAGE ---------------- */
+
+    .solar-full-image {
+      padding: 0 5vw 10vw;
+    }
+
+    .solar-full-image img {
+      width: 100%;
+      display: block;
+      max-height: 78vh;
+      object-fit: cover;
+    }
+
+    .solar-caption {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      padding: 15px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* ---------------- STORY SECTIONS ---------------- */
+
+    .solar-story {
+      padding: 10vw 8vw;
+      border-top: 1px solid var(--line);
+    }
+
+    .solar-story-header {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 8vw;
+      margin-bottom: 75px;
+    }
+
+    .solar-story-number {
+      color: var(--red);
+      font-size: 11px;
+      letter-spacing: .14em;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .solar-story-title h2 {
+      font-size: clamp(45px, 6vw, 90px);
+      line-height: .92;
+      letter-spacing: -.06em;
+      font-weight: 500;
+      margin-bottom: 25px;
+    }
+
+    .solar-story-title p {
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 720px;
+    }
+
+    /* ---------------- FEATURE IMAGE ---------------- */
+
+    .solar-feature-image {
+      width: 100%;
+      display: block;
+      max-height: 720px;
+      object-fit: cover;
+      background: #292929;
+    }
+
+    .solar-image-grid {
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    .solar-image-grid img {
+      width: 100%;
+      height: 100%;
+      min-height: 450px;
+      display: block;
+      object-fit: cover;
+      background: #292929;
+    }
+
+    /* ---------------- TECH CARDS ---------------- */
+
+    .solar-tech-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 55px;
+    }
+
+    .solar-tech-card {
+      border-top: 1px solid var(--line);
+      padding-top: 20px;
+    }
+
+    .solar-tech-card .label {
+      color: var(--red);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: .13em;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .solar-tech-card h3 {
+      font-size: 24px;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .solar-tech-card p {
+      color: var(--muted);
+      max-width: 520px;
+    }
+
+    /* ---------------- PROCESS IMAGES ---------------- */
+
+    .solar-process {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 60px;
+    }
+
+    .solar-process img {
+      width: 100%;
+      display: block;
+      background: #292929;
+      object-fit: cover;
+    }
+
+    .solar-process-caption {
+      padding: 16px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* ---------------- COMPOSITE GALLERY ---------------- */
+
+    .solar-composite-gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 60px;
+    }
+
+    .solar-composite-gallery img {
+      width: 100%;
+      display: block;
+      min-height: 450px;
+      object-fit: cover;
+      background: #292929;
+    }
+
+    .solar-composite-gallery .wide {
+      grid-column: span 2;
+      min-height: 600px;
+    }
+
+    /* ---------------- LEADERSHIP ---------------- */
+
+    .solar-leadership {
+      background: var(--navy);
+      padding: 11vw 8vw;
+      color: var(--ink);
+    }
+
+    .solar-leadership .solar-section-heading .eyebrow {
+      color: #9dbbd4;
+    }
+
+    .solar-leadership h2 {
+      font-size: clamp(50px, 7vw, 100px);
+      line-height: .92;
+      letter-spacing: -.065em;
+      font-weight: 500;
+      max-width: 1000px;
+      margin-bottom: 40px;
+    }
+
+    .solar-leadership h2 em {
+      color: var(--red);
+      font-family: "Playfair Display", Georgia, serif;
+    }
+
+    .solar-leadership-copy {
+      max-width: 760px;
+      font-size: 20px;
+      line-height: 1.55;
+      color: #cbd5dc;
+      margin-bottom: 60px;
+    }
+
+    .solar-team-image {
+      width: 100%;
+      display: block;
+      max-height: 760px;
+      object-fit: cover;
+    }
+
+    /* ---------------- CLOSING ---------------- */
+
+    .solar-closing {
+      min-height: 70vh;
+      padding: 12vw 8vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .solar-closing .eyebrow {
+      color: var(--red);
+    }
+
+    .solar-closing h2 {
+      font-size: clamp(50px, 8vw, 115px);
+      line-height: .92;
+      letter-spacing: -.065em;
+      font-weight: 500;
+      max-width: 1100px;
+      margin: 35px 0 45px;
+    }
+
+    .solar-closing h2 em {
+      font-family: "Playfair Display", Georgia, serif;
+      font-weight: 500;
+      color: var(--red);
+    }
+
+    .solar-closing p {
+      color: var(--muted);
+      max-width: 680px;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    /* ---------------- MOBILE ---------------- */
+
+    @media(max-width:750px) {
+
+      .solar-hero {
+        min-height: 80vh;
+        padding: 14vw 7vw;
+      }
+
+      .solar-hero h1 {
+        font-size: 16vw;
+      }
+
+      .solar-hero-subtitle {
+        font-size: 18px;
+      }
+
+      .solar-meta {
+        display: block;
+      }
+
+      .solar-meta span {
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      .solar-intro,
+      .solar-story-header {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .solar-timeline-section,
+      .solar-story,
+      .solar-leadership,
+      .solar-closing {
+        padding: 18vw 7vw;
+      }
+
+      .solar-timeline-item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .solar-full-image {
+        padding: 0 0 18vw;
+      }
+
+      .solar-full-image img {
+        max-height: none;
+      }
+
+      .solar-caption {
+        padding: 12px 7vw 0;
+        display: block;
+      }
+
+      .solar-caption span {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      .solar-image-grid,
+      .solar-tech-grid,
+      .solar-process,
+      .solar-composite-gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .solar-composite-gallery .wide {
+        grid-column: span 1;
+      }
+
+      .solar-image-grid img,
+      .solar-composite-gallery img {
+        min-height: 300px;
+      }
+
+      .solar-closing h2 {
+        font-size: 15vw;
+      }
+    }
+  </style>
+</head>
+
 <body>
-<nav class="nav"><a class="logo" href="../index.html">NL</a><div class="nav-links"><a href="../projects.html">Work</a><a href="../about.html">About</a><a href="../resume.pdf">Resume</a><a href="mailto:YOUR_EMAIL@example.com">Contact</a></div></nav>
-<main>
-<section class="page-intro"><p class="eyebrow">01 / PROJECT</p><h1>MIT Solar Electric Vehicle Team</h1><p>Designing and building a solar race car from concept through manufacturing.</p></section>
-<section class="section"><div class="placeholder hero-placeholder"><span>HERO IMAGE PLACEHOLDER</span><small>We'll replace this with your project photography</small></div></section>
-<section class="about-copy"><div class="about-label">01 / OVERVIEW</div><div><p class="big-copy">Vehicle design and manufacturing with MIT's Solar Electric Vehicle Team.</p><p>This is where we'll build out the full case study: your role, the engineering challenge, design decisions, analysis, prototyping, testing, results, and lessons learned.</p></div></section>
-<section class="section"><div class="project-grid"><div><div class="placeholder"><span>IMAGE PLACEHOLDER</span><small>CAD / diagram</small></div></div><div><div class="placeholder"><span>IMAGE PLACEHOLDER</span><small>Prototype / testing</small></div></div></div></section>
-<section class="about-copy"><div class="about-label">02 / MY ROLE</div><div><p class="big-copy">Design · Analysis · Prototyping · Testing</p><p>We'll replace this placeholder with the strongest technical details and quantitative results from your project.</p></div></section>
+
+<nav class="nav">
+  <a class="logo" href="index.html">NL</a>
+
+  <div class="nav-links">
+    <a href="projects.html">Work</a>
+    <a href="about.html">About</a>
+    <a href="resume.pdf">Resume</a>
+    <a href="mailto:YOUR_EMAIL@example.com">Contact</a>
+  </div>
+</nav>
+
+
+<main class="solar-page">
+
+  <!-- ==================================================
+       HERO
+       ================================================== -->
+
+  <section class="solar-hero">
+
+    <img
+      class="solar-hero-image"
+      src="assets/solar-car/solstice-track.jpg"
+      alt="Solstice solar car at Brainerd International Raceway"
+    >
+
+    <div class="solar-hero-overlay"></div>
+
+    <div class="solar-hero-content">
+
+      <p class="eyebrow">01 / MIT SOLAR ELECTRIC VEHICLE TEAM</p>
+
+      <h1>
+        Building a solar<br>
+        race car from <em>CAD to track.</em>
+      </h1>
+
+      <p class="solar-hero-subtitle">
+        Three years of mechanical engineering, composite fabrication,
+        manufacturing, and team leadership on MIT's Solar Electric Vehicle Team.
+      </p>
+
+      <div class="solar-meta">
+        <span>
+          Timeline
+          <strong>2023—2026</strong>
+        </span>
+
+        <span>
+          Team
+          <strong>MIT SEVT</strong>
+        </span>
+
+        <span>
+          Focus
+          <strong>Mechanical Engineering</strong>
+        </span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==================================================
+       OVERVIEW
+       ================================================== -->
+
+  <section class="solar-intro">
+
+    <div>
+      <p class="solar-label">01 / Overview</p>
+    </div>
+
+    <div>
+
+      <h2>
+        From subsystem engineer to team captain.
+      </h2>
+
+      <p>
+        I joined MIT's Solar Electric Vehicle Team in 2023 as a
+        Brakes & Pedals engineer on Gemini. I moved to Front Suspension
+        for Solstice the following year, became Vice Captain during the
+        design phase, and served as Captain through manufacturing and
+        competition.
+      </p>
+
+      <br>
+
+      <p>
+        My work has ranged from suspension design and FEA to carbon fiber
+        fabrication, chassis and aeroshell layups, machining, assembly,
+        and solving whatever mechanical problems needed to be solved
+        to get the car on the road.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==================================================
+       TIMELINE
+       ================================================== -->
+
+  <section class="solar-timeline-section">
+
+    <div class="solar-section-heading">
+
+      <p class="eyebrow">02 / Progression</p>
+
+      <h2>
+        Growing with<br>
+        the car.
+      </h2>
+
+    </div>
+
+
+    <div class="solar-timeline">
+
+      <div class="solar-timeline-item">
+
+        <div class="solar-timeline-year">
+          2023—24
+        </div>
+
+        <div class="solar-timeline-role">
+          Brakes & Pedals
+        </div>
+
+        <div class="solar-timeline-desc">
+          Mechanical engineer on Gemini, designing and fabricating
+          braking and pedal-system components.
+        </div>
+
+      </div>
+
+
+      <div class="solar-timeline-item">
+
+        <div class="solar-timeline-year">
+          2024—25
+        </div>
+
+        <div class="solar-timeline-role">
+          Front Suspension · Vice Captain
+        </div>
+
+        <div class="solar-timeline-desc">
+          Designed and analyzed the Solstice front suspension while
+          helping lead the team through the vehicle's design phase.
+        </div>
+
+      </div>
+
+
+      <div class="solar-timeline-item">
+
+        <div class="solar-timeline-year">
+          2025—26
+        </div>
+
+        <div class="solar-timeline-role">
+          Captain
+        </div>
+
+        <div class="solar-timeline-desc">
+          Led the team through manufacturing, integration, testing,
+          scrutineering, and preparation for the American Solar Challenge.
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==================================================
+       HERO IMAGE
+       ================================================== -->
+
+  <section class="solar-full-image">
+
+    <img
+      src="assets/solar-car/solstice-track.jpg"
+      alt="Solstice solar car racing at Brainerd International Raceway"
+    >
+
+    <div class="solar-caption">
+      <span>Solstice</span>
+      <span>Brainerd International Raceway</span>
+    </div>
+
+  </section>
+
+
+  <!-- ==================================================
+       FRONT SUSPENSION
+       ================================================== -->
+
+  <section class="solar-story">
+
+    <div class="solar-story-header">
+
+      <div>
+        <p class="solar-story-number">03 / Solstice</p>
+      </div>
+
+      <div class="solar-story-title">
+
+        <h2>
+          Front Suspension
+        </h2>
+
+        <p>
+          Designing a lightweight suspension system that could survive
+          real road loads while fitting within the constraints of a
+          solar race car.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <img
+      class="solar-feature-image"
+      src="assets/solar-car/front-suspension-assembly.jpg"
+      alt="Solstice front suspension assembly CAD"
+    >
+
+
+    <div class="solar-tech-grid">
+
+      <div class="solar-tech-card">
+
+        <p class="label">Design</p>
+
+        <h3>
+          Suspension architecture
+        </h3>
+
+        <p>
+          Developed the front suspension geometry and mechanical
+          components as part of Solstice's vehicle design.
+        </p>
+
+      </div>
+
+
+      <div class="solar-tech-card">
+
+        <p class="label">Analysis</p>
+
+        <h3>
+          FEA-driven iteration
+        </h3>
+
+        <p>
+          Used ANSYS to evaluate stresses and identify critical
+          regions of the suspension under simulated loading.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="solar-image-grid">
+
+      <img
+        src="assets/solar-car/fs ansys.png"
+        alt="ANSYS stress analysis of the Solstice front suspension"
+      >
+
+      <img
+        src="assets/solar-car/fs bounding blob.png"
+        alt="Front suspension analysis and geometry"
+      >
+
+    </div>
+
+
+    <div class="solar-tech-grid">
+
+      <div class="solar-tech-card">
+
+        <p class="label">Engineering</p>
+
+        <h3>
+          Strength vs. weight
+        </h3>
+
+        <p>
+          Every component had to balance structural requirements
+          against the extreme weight sensitivity of a solar race car.
+        </p>
+
+      </div>
+
+
+      <div class="solar-tech-card">
+
+        <p class="label">Manufacturing</p>
+
+        <h3>
+          From model to hardware
+        </h3>
+
+        <p>
+          The suspension was developed with fabrication, machining,
+          assembly, and serviceability in mind.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="solar-process">
+
+      <div>
+
+        <img
+          src="assets/solar-car/front sus machining.JPG"
+          alt="Machined front suspension components"
+        >
+
+        <p class="solar-process-caption">
+          Machined aluminum suspension hardware.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==================================================
+       GEMINI BRAKES + PEDALS
+       ================================================== -->
+
+  <section class="solar-story">
+
+    <div class="solar-story-header">
+
+      <div>
+        <p class="solar-story-number">04 / Gemini</p>
+      </div>
+
+      <div class="solar-story-title">
+
+        <h2>
+          Brakes & Pedals
+        </h2>
+
+        <p>
+          Before moving to Solstice, I worked on the brakes and pedal
+          system for Gemini, taking components from mechanical design
+          through fabrication and assembly.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="solar-process">
+
+      <div>
+
+        <img
+          src="assets/solar-car/gemini pedal cad.png"
+          alt="Gemini pedal assembly CAD"
+        >
+
+        <p class="solar-process-caption">
+          Pedal system CAD.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <img
+          src="assets/solar-car/gemini rotor cad.png"
+          alt="Gemini brake rotor CAD"
+        >
+
+        <p class="solar-process-caption">
+          Brake rotor design.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="solar-process">
+
+      <div>
+
+        <img
+          src="assets/solar-car/gemini rotor waterjet.jpg"
+          alt="Waterjet-cut Gemini brake rotor"
+        >
+
+        <p class="solar-process-caption">
+          Brake rotor after waterjet manufacturing.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <img
+          src="assets/solar-car/gemini brake assem.JPG"
+          alt="Gemini braking system assembly"
+        >
+
+        <p class="solar-process-caption">
+          Brake system assembly.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="solar-tech-grid">
+
+      <div class="solar-tech-card">
+
+        <p class="label">Design</p>
+
+        <h3>
+          Mechanical systems
+        </h3>
+
+        <p>
+          Designed braking and pedal components in CAD with attention
+          to geometry, interfaces, packaging, and manufacturability.
+        </p>
+
+      </div>
+
+
+      <div class="solar-tech-card">
+
+        <p class="label">Fabrication</p>
+
+        <h3>
+          Design → hardware
+        </h3>
+
+        <p>
+          Took the designs into fabrication and hands-on assembly,
+          turning digital models into race-ready mechanical hardware.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==================================================
+       COMPOSITES
+       ================================================== -->
+
+  <section class="solar-story">
+
+    <div class="solar-story-header">
+
+      <div>
+        <p class="solar-story-number">05 / Composites</p>
+      </div>
+
+      <div class="solar-story-title">
+
+        <h2>
+          Building the body.
+        </h2>
+
+        <p>
+          My work on Solstice also extended into composite manufacturing.
+          I helped fabricate the chassis and aeroshell through hands-on
+          carbon fiber layup, demolding, finishing, and assembly.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="solar-composite-gallery">
+
+      <img
+        class="wide"
+        src="assets/solar-car/top aeroshell layup.jpeg"
+        alt="Carbon fiber aeroshell layup"
+      >
+
+      <img
+        src="assets/solar-car/chassis panel layup.jpeg"
+        alt="Carbon fiber chassis panel layup"
+      >
+
+      <img
+        src="assets/solar-car/top aeroshell layup 2.jpeg"
+        alt="Aeroshell composite layup"
+      >
+
+      <img
+        src="assets/solar-car/demolding.jpg"
+        alt="Demolding a composite component"
+      >
+
+      <img
+        src="assets/solar-car/lower aeroshell.jpeg"
+        alt="Lower aeroshell composite construction"
+      >
+
+      <img
+        src="assets/solar-car/lower assembly.jpeg"
+        alt="Lower aeroshell assembly"
+      >
+
+    </div>
+
+
+    <div class="solar-tech-grid">
+
+      <div class="solar-tech-card">
+
+        <p class="label">Chassis</p>
+
+        <h3>
+          Carbon fiber layup
+        </h3>
+
+        <p>
+          Helped fabricate structural composite components that form
+          the foundation of the vehicle.
+        </p>
+
+      </div>
+
+
+      <div class="solar-tech-card">
+
+        <p class="label">Aeroshell</p>
+
+        <h3>
+          Large-scale composites
+        </h3>
+
+        <p>
+          Worked hands-on through the fabrication of the aerodynamic
+          shell that forms the outer body of Solstice.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==================================================
+       LEADERSHIP
+       ================================================== -->
+
+  <section class="solar-leadership">
+
+    <div class="solar-section-heading">
+
+      <p class="eyebrow">
+        06 / Leadership
+      </p>
+
+    </div>
+
+
+    <h2>
+      From building the car<br>
+      to <em>leading the team.</em>
+    </h2>
+
+
+    <p class="solar-leadership-copy">
+      As Vice Captain, I helped guide Solstice through its design phase.
+      As Captain, I led the team through manufacturing and the final push
+      toward competition. The role meant balancing engineering decisions
+      with people, schedules, suppliers, manufacturing constraints, and
+      the thousands of details required to turn a design into a working car.
+    </p>
+
+
+    <img
+      class="solar-team-image"
+      src="assets/solar-car/full team.jpeg"
+      alt="MIT Solar Electric Vehicle Team with Solstice"
+    >
+
+  </section>
+
+
+  <!-- ==================================================
+       CLOSING
+       ================================================== -->
+
+  <section class="solar-closing">
+
+    <p class="eyebrow">
+      07 / Takeaway
+    </p>
+
+
+    <h2>
+      I like engineering that<br>
+      has to <em>work in the real world.</em>
+    </h2>
+
+
+    <p>
+      SEVT has taught me how to take an idea from a CAD model through
+      analysis, manufacturing, assembly, testing, and ultimately onto
+      the road — while learning how to build alongside and lead a team.
+    </p>
+
+  </section>
+
 </main>
-<footer><span>© 2026 Nicole Lin</span><span>MIT Mechanical Engineering</span></footer>
-</body></html>
+
+
+<footer>
+  <span>© 2026 Nicole Lin</span>
+  <span>MIT Mechanical Engineering</span>
+</footer>
+
+</body>
+</html>
